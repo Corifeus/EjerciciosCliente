@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	var miObjeto={nombre:"Pepe",edad:7,mostrarNombre:function(){ alert("Tu nombre es: " + this.nombre)}};
+
+
+	console.log(miObjeto.nombre);
+	miObjeto.mostrarNombre();
+
+	function arrancar(){
+		alert("Arrancando motores...");
+	}
+
+	function acelerar(velocidad){
+		alert("Acelerando motores hasta " + velocidad);
+	}
+
+	//constructor
+	function Coche(marca,modelo,color){
+		//propiedades
+		this.marca=marca;
+		this.modelo=modelo;
+		this.color=color;
+
+
+		//metodos
+		this.arrancar=arrancar;
+
+		this.acelerar=acelerar
+
+		this.mostrarMarca=function(){
+			return "La marca es: " + this.marca;
+		};
+
+		this.cambiarMarca=function(nuevaMarca){
+			this.marca=nuevaMarca;
+		}
+	}
+
+	var coche1=new Coche("Ford","Kuga","negro");
+	coche1.cambiarMarca("Mercedes");
+	document.write(coche1.mostrarMarca());
+	function Coche2(){};
+
+	alert(coche1 instanceof Coche2);//nos da un false :(
+
+	alert("marca" in coche1);
+
+	var mensaje="";
+
+	for(propiedad in coche1){
+		mensaje+=propiedad + "<br>";
+	}
+
+	document.write(mensaje);
+	
+/*
+
+	coche1.marca="Ford";
+
+	console.log(coche1["marca"]);
+
+	coche1.arrancar();
+
+	coche1.acelerar(120);
+
+	with(coche1){
+		alert(marca);
+		alert(modelo);
+	}
+
+*/
+</script>
+</body>
+</html>

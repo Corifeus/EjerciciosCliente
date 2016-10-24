@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+function esValido(cadena){
+	var expReg=new RegExp("^[a-zA-Z]{1,20}$");
+
+	if(expReg.test(cadena)){
+		return cadena + " OK";
+	}else{
+		return cadena + " KO"
+	}
+}
+
+
+function validarDni(cadena){
+	var patron=new RegExp("^[0-5]{1}[0-9]{7}-[A-Z]{1}$");
+
+	if(patron.test(cadena)){
+		return cadena + " OK";
+	}else{
+		return cadena + " KO"
+	}
+}
+
+function validarTelefono(cadena){
+	var patron=/^\d{3}-\d{3}-\d{3}$/
+
+	if(patron.test(cadena)){
+		return cadena + " OK";
+	}else{
+		return cadena + " KO";
+	}
+}
+
+function telNormal(cadena){
+	var patronsico=/^\d{3}\s\d{2}\s\d{2}\s\d{2}$/
+
+	if(patronsico.test(cadena)){
+		return cadena + " OK";
+	}else{
+		return cadena + " KO";
+	}
+}
+
+function otroTelefono(cadena){
+	var patron=/^\(\d{3}\)\s\d{6}$/
+
+	if(patron.test(cadena)){
+		return cadena + " OK";
+	}else{
+		return cadena + " KO";
+	}
+}
+
+function validarHora(cadena){
+	var patron=/^([01]\d|2[0-3]):[0-5]\d:[0-5]\d$/
+
+	if(patron.test(cadena)){
+		return cadena + " OK"
+	}else{
+		return cadena + " KO"
+	}
+}
+document.write(esValido("Pepe") + "<br>")
+
+document.write(validarDni("59999999-M") + "<br>")
+
+document.write(validarDni("60000000-M") + "<br>")
+
+document.write(validarTelefono("999-999-999") + "<br>")
+
+document.write(validarTelefono("9989-999-999") + "<br>")
+
+document.write(telNormal("961 17 68 01") + "<br>")
+
+document.write(otroTelefono("(900) 123456") + "<br>")
+
+document.write(validarHora("23:15:30") + "<br>")
+
+var expReg6=/^([01]\d|2[0-3]):[0-5]\d:[0-5]\d$/;
+
+document.write("Formato hora 24 horas: " + expReg6.test("23:15:30") + "<br>");
+</script>
+</body>
+</html>

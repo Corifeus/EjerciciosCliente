@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link href="estilo.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<img id="imagen" src="coche.jpg" />
+<script type="text/javascript">
+
+var margen=0;
+	
+	mivar = setInterval(cambiarMargen, 50);
+
+	function cambiarMargen(){
+		if(margen < 61){
+			margen++;
+			document.getElementById("imagen").style.marginLeft = margen + "%";
+		}
+	}
+	
+		
+</script>
+</body>
+</html>

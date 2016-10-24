@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	
+class Vehiculo{
+	constructor(marca,modelo){
+		this.marca=marca;
+		this.modelo=modelo;
+	}
+
+	arrancar(){
+		alert("Arrancando...");
+	}
+}
+
+
+class Camion extends Vehiculo{
+	constructor(marca,modelo,cabina){
+		super(marca,modelo);
+		this.cabina=cabina;
+	}
+}
+
+
+
+
+
+</script>
+</body>
+</html>

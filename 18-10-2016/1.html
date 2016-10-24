@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	function pruebaVar(){
+		var x=20;
+
+		if(x>10){
+			var x=50;
+			console.log(x);
+		}
+		console.log(x);
+	}
+
+	pruebaVar();
+
+	//let
+	function pruebaLet(){
+		let x=20;
+
+		if(x>10){
+			let x=50;
+			console.log(x);
+		}
+		console.log(x);
+	}
+
+	pruebaLet();
+
+
+	//const
+
+	const PI=3.141593;
+
+	//PI=7,14;
+
+	let suma=(a,b)=>1+b;//ECMAScript 6
+
+	var suma1=function(a,b){//ECMAScript 5
+		return a+b;
+	}
+
+	console.log(suma(3,4));
+
+
+	//function para devolver un número aleatorio
+
+	//con let
+	let ale=()=>Math.floor((Math.random() * 10) + 1);
+
+	console.log(ale());
+
+	//con función dentro de variable
+	var aleatorio=function(){
+		return Math.floor((Math.random() * 10) + 1); 
+	}
+
+	console.log(aleatorio());
+
+
+
+	function suma2(x=4,y=3){
+		return x+y;
+	}
+
+	console.log(suma2());
+
+	let numero=10;
+
+	console.log(`El número es: ${numero}`);
+
+	var cadena=`hola
+
+	a todos`;
+
+	console.log(cadena);
+
+	var mapa=new Map();
+	mapa.set("nombre","Pepe");
+
+	console.log(mapa.get("nombre"));
+
+	var mes=["enero","febrero","marzo"];
+
+	mes.forEach(elemento=>{
+		console.log(elemento);
+	});
+
+
+	var [valor1,valor2]=["Hola","Pepe"];
+
+	console.log(valor1);
+	console.log(valor2);
+
+	var persona={nombre:"Pepe",apellidos:"Garcia"};
+	var {nombre,apellidos}=persona;
+
+	console.log(nombre);
+
+</script>
+</body>
+</html>

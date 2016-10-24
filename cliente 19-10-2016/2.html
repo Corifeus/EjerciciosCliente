@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function asignarPais(txtcode){
+			if(window.opener){
+				if(window.opener.document.form1){
+					window.opener.document.form1.campo1.value=txtcode;
+				}
+				return;
+			}
+		}
+	</script>
+</head>
+<body>
+<script type="text/javascript">
+	
+</script>
+
+<ul>
+	<li><a href="javascript::asignarPais('España')">España</a></li>
+</ul>
+</body>
+</html>

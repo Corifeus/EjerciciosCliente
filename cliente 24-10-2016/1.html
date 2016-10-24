@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	/*
+	var mensaje1="Hola";
+	var referencia;
+
+	function f1(){
+		var mensaje2="Hola 2";
+
+		function f2(){
+			console.log("mensaje1 " + mensaje1);
+			console.log("mensaje2 " + mensaje2);
+		}
+		f2();
+		referencia=f2
+	}
+
+	f1();
+	referencia();
+
+	for(var i=1;i<=5;i++){
+		(function(variable){
+			setTimeout(function(){
+			console.log(variable);
+		},i*2000);
+		})(i);
+	}
+
+	*/
+
+	function cont(){
+		var contador=0;
+		function suma(){
+			contador++;
+		}
+		suma();
+		console.log("contador:"+ contador);
+	}
+
+	var function2=(function(){
+		var contador=0;
+		return function(){
+			contador++;
+			console.log("contador:" + contador);
+		}
+	})();
+
+	function2();
+	function2();
+	function2();
+
+</script>
+</body>
+</html>

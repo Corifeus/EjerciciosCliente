@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	function Coche(){
+		Coche.prototype.color="rojo";
+
+		var coche1=new Coche();
+
+		alert(coche1.color);
+
+
+	};
+
+
+	//constructor Persona
+	function Persona(nombre,apellidos){
+		this.nombre=nombre;
+		this.apellidos=apellidos;
+	}
+	
+	function Empleado(nombre,apellidos,sueldo){
+		Persona.call(this,nombre,apellidos);
+		this.sueldo=sueldo;
+	}
+
+	var empleado1=new Empleado("Carlos","Martinez",1325);
+
+	alert(empleado1.nombre);
+
+	Empleado.prototype=new Persona();
+
+	alert(empleado1 instanceof Persona);
+
+</script>
+</body>
+</html>
