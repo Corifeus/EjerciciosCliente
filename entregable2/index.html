@@ -11,54 +11,95 @@
 
 <div id="calculator">
 
-<span id="valor">0</span>
+<input type="text" id="valor" value=0 readonly="readonly">
 
 <div>
-	<button onclick="funcion()">SQRT</button>
-	<button onclick="funcion()">EXP</button>
-	<button onclick="funcion()">LOG</button>
+	<button onclick="funcion('SQRT')">SQRT</button>
+	<button onclick="funcion('EXP')">EXP</button>
+	<button onclick="funcion('LOG')">LOG</button>
 </div>
 
 <div>
-	<button onclick="funcion()">SENO</button>
-	<button onclick="funcion()">COSENO</button>
-	<button onclick="funcion()">TAN</button>
+	<button onclick="funcion('SENO')">SENO</button>
+	<button onclick="funcion('COSENO')">COSENO</button>
+	<button onclick="funcion('TAN')">TAN</button>
 </div>
 
 <div>
-	<button onclick="funcion()">MC</button>
-	<button onclick="añadirNum()">7</button>
-	<button onclick="añadirNum()">8</button>
-	<button onclick="añadirNum()">9</button>
-	<button onclick="operando()">+</button>
+	<button onclick="funcion('MC')">MC</button>
+	<button onclick="añadirNum(7)">7</button>
+	<button onclick="añadirNum(8)">8</button>
+	<button onclick="añadirNum(9)">9</button>
+	<button onclick="operando('+')">+</button>
 </div>
 
 <div>
-	<button onclick="funcion()">MR</button>
-	<button onclick="añadirNum()">4</button>
-	<button onclick="añadirNum()">5</button>
-	<button onclick="añadirNum()">6</button>
-	<button onclick="operando()">-</button>
+	<button onclick="funcion('MR')">MR</button>
+	<button onclick="añadirNum(4)">4</button>
+	<button onclick="añadirNum(5)">5</button>
+	<button onclick="añadirNum(6)">6</button>
+	<button onclick="operando('-')">-</button>
 </div>
 
 <div>
-	<button onclick="funcion()">MS</button>
-	<button onclick="añadirNum()">1</button>
-	<button onclick="añadirNum()">2</button>
-	<button onclick="añadirNum()">3</button>
-	<button onclick="operando()">*</button>
+	<button onclick="funcion('MS')">MS</button>
+	<button onclick="añadirNum(1)">1</button>
+	<button onclick="añadirNum(2)">2</button>
+	<button onclick="añadirNum(3)">3</button>
+	<button onclick="operando('*')">*</button>
 </div>
 
 <div>
-	<button>=</button>
-	<button onclick="añadirNum()">0</button>
-	<button onclick="añadirNum()">.</button>
-	<button onclick="funcion()">CLEAR</button>
-	<button onclick="operando()">/</button>	
+	<button onclick="operando('=')">=</button>
+	<button onclick="añadirNum(0)">0</button>
+	<button onclick="añadirNum('.')">.</button>
+	<button onclick="limpiar()">CLEAR</button>
+	<button onclick="operando('/')">/</button>	
 </div>
 
 	<script type="text/javascript">
-	
+		
+		function añadirNum(nume)
+		{
+			var num = document.getElementById("valor");
+				if(num["value"] == 0){
+					total=nume;
+					num["value"]=total;
+				}else{
+					total=num["value"] + nume;
+					num.value=total;
+			}
+		}
+
+		function limpiar()
+		{
+			var num= document.getElementById("valor");
+			num["value"]=0;
+		}
+
+		function funcion(comando)
+		{
+			var num= document.getElementById("valor");
+
+			switch(comando)
+			{
+				case 'SQRT':
+				total=Math.sqrt(num["value"]);
+				num["value"]=total;
+				break;
+
+				case 'SENO':
+				total=Math.sin(num["value"]);
+				num["value"]=total;
+				break;
+
+				case 'TAN':
+				total=Math.tan(num["value"]);
+				num["value"]=total;
+				break;
+			}
+		}
+
 	</script>
 </div>
 </body>
