@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+
+
+var promesa1=function(){
+	return new Promise(function(resolver,rechazar){
+		setTimeout(function(){
+			console.log("3 segundos");
+			resolver();
+		},3000);
+	});
+};
+
+var promesa2=function(){
+	return new Promise(function(resolver,rechazar){
+		setTimeout(function(){
+			console.log("1 segundo");
+			resolver();
+		},1000);
+	});
+};
+
+
+promesa1().then(promesa2).then(function(){
+	console.log("FIIINNNNNNN");
+});
+
+
+</script>
+</body>
+</html>

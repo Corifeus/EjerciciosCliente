@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script type="text/javascript">
+	
+
+function funcion1(micallback){
+	micallback("1");
+}
+
+funcion1(function(texto){
+	console.log("Hola " + texto);
+});
+
+function funcion2(micallback1,micallback2,micallback3){
+	micallback1("1");
+	micallback2("2");
+	micallback3("3");
+}
+
+funcion2(
+	function(valor){
+		console.log(valor);
+	},
+	function(valor){
+		console.log(valor);
+	},
+	function(valor){
+		console.log(valor);
+	}
+);
+
+
+</script>
+
+</body>
+</html>

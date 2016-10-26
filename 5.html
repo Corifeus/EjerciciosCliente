@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	Promise.resolve("Hola").then(
+		function f1(resultado){
+			console.log("Paso 1 " + resultado);
+			return "Pasamos al paso 2"
+		}).then(function f2(resultado){
+			console.log("Paso 2: " + resultado);
+		}).then(function f3(resultado){
+			console.log("Paso 3 " + resultado);
+		});
+</script>
+</body>
+</html>
