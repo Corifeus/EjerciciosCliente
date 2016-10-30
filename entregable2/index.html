@@ -15,7 +15,7 @@
 
 <div>
 	<button onclick="funcion('SQRT')">SQRT</button>
-	<button onclick="funcion('EXP')">EXP</button>
+	<button onclick="operando('EXP')">EXP</button>
 	<button onclick="funcion('LOG')">LOG</button>
 </div>
 
@@ -57,49 +57,7 @@
 	<button onclick="operando('/')">/</button>	
 </div>
 
-	<script type="text/javascript">
-		
-		function añadirNum(nume)
-		{
-			var num = document.getElementById("valor");
-				if(num["value"] == 0){
-					total=nume;
-					num["value"]=total;
-				}else{
-					total=num["value"] + nume;
-					num.value=total;
-			}
-		}
-
-		function limpiar()
-		{
-			var num= document.getElementById("valor");
-			num["value"]=0;
-		}
-
-		function funcion(comando)
-		{
-			var num= document.getElementById("valor");
-
-			switch(comando)
-			{
-				case 'SQRT':
-				total=Math.sqrt(num["value"]);
-				num["value"]=total;
-				break;
-
-				case 'SENO':
-				total=Math.sin(num["value"]);
-				num["value"]=total;
-				break;
-
-				case 'TAN':
-				total=Math.tan(num["value"]);
-				num["value"]=total;
-				break;
-			}
-		}
-
+	<script type="text/javascript" src="script.js">
 	</script>
 </div>
 </body>
